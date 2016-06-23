@@ -5,9 +5,10 @@ env:
         - "BUILD_NUMBER=$TRAVIS_BUILD_NUMBER"
         - "BUILD_DIR=$TRAVIS_BUILD_DIR"
 script:
+    - chmod +x ./build.sh
     - ./build.sh
 after_success:
-    - wget http://modthegungeon.github.io/deploy_mod.sh
+    - wget https://modthegungeon.github.io/deploy_mod.sh
     - chmod +x ./deploy_mod.sh
     - ./deploy_mod.sh
     - rm ./deploy_mod.sh
