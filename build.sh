@@ -1,5 +1,5 @@
 #!/bin/bash
-cd Assembly-CSharp.ExampleMod.mm
+cd Assembly-CSharp.ExampleAPI.mm
 if [ -z ${BUILD_NUMBER+x} ]; then
   echo 'build_main: Leaving version default.'
 else
