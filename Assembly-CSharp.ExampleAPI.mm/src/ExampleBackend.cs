@@ -16,7 +16,10 @@ public class ExampleBackend : ETGBackend {
     /// Game mods should be able to access this freely as long as the backend is injected.
     /// Making the setting fields removes the need for an instance holder.
     /// </summary>
-    public static Func<string, string> SpeedrunText;
+    public static Func<string, string> SpeedrunText = DefaultSpeedrunTextHook;
+    public static string DefaultSpeedrunTextHook(string text) {
+        return text + " (default ExampleAPI hook)";
+    }
 
     public override void Start() {
         // Initialization code goes in here.
