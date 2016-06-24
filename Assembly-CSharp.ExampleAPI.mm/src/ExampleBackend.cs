@@ -16,13 +16,18 @@ public class ExampleBackend : ETGBackend {
     /// Game mods should be able to access this freely as long as the backend is injected.
     /// Making the setting fields removes the need for an instance holder.
     /// </summary>
-    public static Func<string, string> SpeedrunTextHook = DefaultSpeedrunTextHook;
-    public static string DefaultSpeedrunTextHook(string text) {
-        return text + " (git gud)";
-    }
+    public static Func<string, string> SpeedrunText;
 
     public override void Start() {
         // Initialization code goes in here.
+    }
+
+    public override void Update() {
+        // Update code goes in here.
+    }
+
+    public override void Exit() {
+        // Disposal code goes in here.
     }
 
 }

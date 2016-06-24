@@ -21,9 +21,7 @@ public class patch_SpeedrunTimer : SpeedrunTimer {
         orig_Update();
 
         // ... and replace the text.
-        if (ExampleBackend.SpeedrunTextHook != null) {
-            dfLabel_0.Text = ExampleBackend.SpeedrunTextHook(dfLabel_0.Text);
-        }
+        dfLabel_0.Text = ExampleBackend.SpeedrunText.RunHooks(dfLabel_0.Text);
     }
 
 }
