@@ -43,8 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\ExampleMod.cs" />
+    <Compile Include="src\ExampleBackend.cs" />
     <Compile Include="src\SpeedrunTimer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ETGMod.Base\Assembly-CSharp.Base.mm\Assembly-CSharp.Base.mm.csproj">
+      <Project>{363a46e8-d9dd-4f31-9307-73b664e71d45}</Project>
+      <Name>Assembly-CSharp.Base.mm</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

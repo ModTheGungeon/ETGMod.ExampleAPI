@@ -21,7 +21,9 @@ public class patch_SpeedrunTimer : SpeedrunTimer {
         orig_Update();
 
         // ... and replace the text.
-        dfLabel_0.Text = "NEW WR! ALWAYS!";
+        if (ExampleBackend.SpeedrunTextHook != null) {
+            dfLabel_0.Text = ExampleBackend.SpeedrunTextHook(dfLabel_0.Text);
+        }
     }
 
 }
