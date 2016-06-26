@@ -6,8 +6,7 @@
 // END OPTIONAL
 
 // Feel free to use what you're using - you're not limited to the usings of the injecting type!
-using System;
-using System.Collections.Generic;
+using UnityEngine;
 
 // Gungeon / many Unity games don't use a namespace.
 public class patch_SpeedrunTimer : SpeedrunTimer {
@@ -17,8 +16,13 @@ public class patch_SpeedrunTimer : SpeedrunTimer {
     private extern void orig_Update(); // The original method will end up here.
     private void Update() {
         // Setup stuff happens in the original method.
-        // Instead of copying it over, we just call it...
+        // Instead of copying it over, we just call it, ...
         orig_Update();
+
+        // ... check if the label is visible...
+        if (!dfLabel_0.IsVisible) {
+            return;
+        }
 
         // ... and replace the text.
         dfLabel_0.Text = ExampleBackend.SpeedrunText.RunHooks(dfLabel_0.Text);
