@@ -11,7 +11,7 @@ using UnityEngine;
 // Gungeon / many Unity games don't use a namespace.
 public class patch_SpeedrunTimer : SpeedrunTimer {
 
-    private dfLabel m_label; // This field is private in SpeedrunTimer. It's the label.
+    private dfLabel dfLabel_0; // This field is private in SpeedrunTimer. It's the label.
 
     private extern void orig_Update(); // The original method will end up here.
     private void Update() {
@@ -20,12 +20,12 @@ public class patch_SpeedrunTimer : SpeedrunTimer {
         orig_Update();
 
         // ... check if the label is visible...
-        if (!m_label.IsVisible) {
+        if (!dfLabel_0.IsVisible) {
             return;
         }
 
         // ... and replace the text.
-        m_label.Text = ExampleBackend.SpeedrunText.RunHooks(dfLabel_0.Text);
+        dfLabel_0.Text = ExampleBackend.SpeedrunText.RunHooks(dfLabel_0.Text);
     }
 
 }
